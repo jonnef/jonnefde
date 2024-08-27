@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const MenuButton = () => {
@@ -21,7 +22,7 @@ const MenuButton = () => {
         <ul
           tabIndex={0}
           className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-          <li><a>Homepage</a></li>
+          <li><Link href="/kanban">Kanban</Link></li>
           <li><a>Portfolio</a></li>
           <li><a>About</a></li>
         </ul>

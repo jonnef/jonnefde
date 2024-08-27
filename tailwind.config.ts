@@ -18,6 +18,9 @@ const config: Config = {
   plugins: [
     require('daisyui'),
   ],
+  container: {
+    center: true
+  },
   daisyui: {
     themes: [
       "light",
