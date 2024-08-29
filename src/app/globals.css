@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  align-content: center;
+  text-align: center;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+center{
+  align-items: center;
+}
+
+.content-part{
+  padding-top: 10px;
+}
