@@ -10,6 +10,7 @@ const KanbanItemCard = () => {
 
   const clearInput = () => {
     setInputValue("");
+
   };
   return (
     <div className='card bg-base-200 w-96 shadow-xl'>
