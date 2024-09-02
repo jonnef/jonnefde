@@ -1,13 +1,15 @@
 import React from 'react'
+import { Items } from '../interfaces/Items'
 
-const KanbanItemCard = () => {
+const KanbanItem = (tasks: Items) => {
+
   return (
-    <div className='card bg-base-200 w-96 shadow-xl'>
-      <div className='card-body'>
-        <input type='text' placeholder='Type new Kanban Item here' className='input' />
+    <div className='card bg-base-300 w-96' key={tasks.itemId}>
+      <div className='card-body' >
+        {tasks.itemText}
       </div>
     </div>
   )
 }
 
-export default KanbanItemCard
+export default KanbanItem
