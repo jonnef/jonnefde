@@ -3,7 +3,7 @@ import NavbarComponent from "./components/Navbar";
 
 export default function Home() {
   return (
-    <main>
+    <main content="width=device-width, initial-scale=1">
       <NavbarComponent headline={"Homepage"} />
       <div>
         <a className="card" href="/union">
