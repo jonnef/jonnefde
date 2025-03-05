@@ -1,15 +1,20 @@
 import Image from "next/image";
-import Link from "next/link";
-import HomeButton from "./components/buttons/Home";
-import ThemeSwapButton from "./components/buttons/ThemeSwap";
-import SettingsButton from "./components/buttons/Settings";
-import MenuButton from "./components/buttons/Menu";
 import NavbarComponent from "./components/Navbar";
 
 export default function Home() {
   return (
     <main>
       <NavbarComponent headline={"Homepage"} />
+      <div>
+        <a className="card" href="/union">
+          <figure>
+            {/* <img src="/unionzweite.JPEG" /> */}
+            <Image src={`/images/union.jpeg`} alt="Unionzweite Bild"
+            width={1315}
+            height={837}/>
+          </figure>
+        </a>
+      </div>
     </main>
   );
 }

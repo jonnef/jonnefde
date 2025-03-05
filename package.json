@@ -9,9 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "14.2.6",
+    "@dnd-kit/core": "^6.1.0",
+    "axios": "^1.8.1",
+    "next": "^15.2.1",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "todo": "file:"
   },
   "devDependencies": {
     "@types/node": "^20",
