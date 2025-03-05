@@ -11,7 +11,7 @@ const SettingsButton = () => {
         <ul
           tabIndex={0}
           className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-          <li style={{ alignContent: "center" }}><a>Portfolio</a></li>
+          <li style={{ alignContent: "center" }}><a href='/union/new'>Neuer Spieler</a></li>
           <li style={{ alignContent: "center" }}><a>About</a></li>
           <li><label className="swap swap-rotate"><input type="checkbox" className="theme-controller" value="dim" />
             {/* sun icon */}
