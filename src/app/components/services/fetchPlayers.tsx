@@ -4,7 +4,7 @@ const fetchPlayers = async () => {
   try{
     console.log("Fetching players...");
 
-    const response = await fetch(('http://localhost:8080/api/player/allPlayers'));
+    const response = await fetch(('https://player-management-service-production.up.railway.app/api/player/allPlayers'));
 
     console.log("Response status:", response.status);
     if(!response.ok){

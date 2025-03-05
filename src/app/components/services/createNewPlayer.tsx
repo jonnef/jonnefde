@@ -1,7 +1,7 @@
 import React from 'react'
 
 const createNewPlayer = async (data: {firstName: string, lastName: string, position: string}) => {
-    const url = 'http://localhost:8080/api/player/newPlayer';
+    const url = 'https://player-management-service-production.up.railway.app/api/player/newPlayer';
   try{
     console.log("Neuer spieler wird erstellt!");
     console.log(data);

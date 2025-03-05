@@ -4,7 +4,7 @@ async function deletePlayer (id: Number) {
   try{
     console.log("Delete player...", id);
 
-    const response = await fetch((`http://localhost:8080/api/player/deletePlayer/${id}`),{method: 'DELETE',headers: {
+    const response = await fetch((`https://player-management-service-production.up.railway.app/api/player/deletePlayer/${id}`),{method: 'DELETE',headers: {
       'Content-Type': 'application/json',
     },});
 
