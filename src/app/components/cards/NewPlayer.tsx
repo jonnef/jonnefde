@@ -21,7 +21,7 @@ const NewPlayerCard = () => {
     }));
   };
 
-  const saveData = (data: {firstName: string, lastName: string,nickName: string, position: string, birthDate: string, balance: number, jerseyNumber:number}) => {
+  const saveData = (data: {firstName: string, lastName: string, nickName: string, position: string, birthDate: string, balance: number, jerseyNumber:number}) => {
     createNewPlayer(data);
     setInputValues({
       firstName: '',
@@ -42,32 +42,104 @@ const NewPlayerCard = () => {
     saveData(inputValues);
   };
   return (
-    <div className='card bg-base-200 w-96 shadow-xl'>
-      <div className='card-body'>
-      <fieldset className='fieldset w-xs bg-base-200 border border-base-300 p-2 rounded-box'>
-            <legend className='fieldset-legend'>Test</legend>
-            <label className="fieldset-label" >Vorname</label>
-            <input type="text" className="input" name="firstName" value={inputValues.firstName} onChange={handleInputChange} placeholder="Max" />
-            <label className="fieldset-label">Nachname</label>
-            <input type="text" className="input" name="lastName" value={inputValues.lastName} onChange={handleInputChange} placeholder="Mustermann" />
-            <label className="fieldset-label">Spitzname</label>
-            <input type="text" className="input" name="nickName" value={inputValues.nickName} onChange={handleInputChange} placeholder="Musti" />
-            <label className="fieldset-label">Geburtsdatum</label>
-            <input type="date" className="input" name="birthDate" value={inputValues.birthDate ? inputValues.birthDate.toString().split("T")[0] : ""} onChange={handleInputChange} placeholder="01.01.1999" />
-            <label className="fieldset-label">Trikotnummer</label>
-            <input type="text" className="input" inputMode='numeric' name="jerseyNumber" value={inputValues.jerseyNumber} onChange={handleInputChange} placeholder="my-awesome-page" />
-            <label className="fieldset-label">Position</label>
-            <select name="position" value={inputValues.position} onChange={handleInputChange}>
-              <option value="">Wähle die Position des Spielers</option>
-              <option value="Attacker">Stürmer</option>
-              <option value="Midfielder">Mittelfeldspieler</option>
-              <option value="Defender">Abwerspieler</option>
-              <option value="Goalkeeper">Torhüter</option>
-            </select>
-            <button className="btn join-item" onClick={handleSubmit}>save</button>
-        </fieldset>
+    <div className="md:container md:mx-auto p-4">
+  <fieldset className="fieldset max-w-4xl w-full bg-base-200 border border-base-300 p-6 rounded-lg shadow-lg">
+    <div className="space-y-6">
+      <div className="field-group">
+        <label className="fieldset-label" htmlFor="firstName">Vorname</label>
+        <input
+          id="firstName"
+          type="text"
+          className="input w-full p-2 border rounded-md"
+          name="firstName"
+          value={inputValues.firstName}
+          onChange={handleInputChange}
+          placeholder="Max"
+        />
+      </div>
+
+      <div className="field-group">
+        <label className="fieldset-label" htmlFor="lastName">Nachname</label>
+        <input
+          id="lastName"
+          type="text"
+          className="input w-full p-2 border rounded-md"
+          name="lastName"
+          value={inputValues.lastName}
+          onChange={handleInputChange}
+          placeholder="Mustermann"
+        />
+      </div>
+
+      <div className="field-group">
+        <label className="fieldset-label" htmlFor="nickName">Spitzname</label>
+        <input
+          id="nickName"
+          type="text"
+          className="input w-full p-2 border rounded-md"
+          name="nickName"
+          value={inputValues.nickName}
+          onChange={handleInputChange}
+          placeholder="s"
+        />
+      </div>
+
+      <div className="field-group">
+        <label className="fieldset-label" htmlFor="birthDate">Geburtsdatum</label>
+        <input
+          id="birthDate"
+          type="date"
+          className="input w-full p-2 border rounded-md"
+          name="birthDate"
+          value={inputValues.birthDate ? inputValues.birthDate.toString().split("T")[0] : ""}
+          onChange={handleInputChange}
+          placeholder="01.01.1999"
+        />
+      </div>
+
+      <div className="field-group">
+        <label className="fieldset-label" htmlFor="jerseyNumber">Trikotnummer</label>
+        <input
+          id="jerseyNumber"
+          type="text"
+          className="input w-full p-2 border rounded-md"
+          inputMode="numeric"
+          name="jerseyNumber"
+          value={inputValues.jerseyNumber}
+          onChange={handleInputChange}
+          placeholder="Nummer"
+        />
+      </div>
+
+      <div className="field-group">
+        <label className="fieldset-label" htmlFor="position">Position</label>
+        <select
+          id="position"
+          name="position"
+          className="input w-full p-2 border rounded-md"
+          value={inputValues.position}
+          onChange={handleInputChange}
+        >
+          <option value="">Wähle die Position des Spielers</option>
+          <option value="Attacker">Stürmer</option>
+          <option value="Midfielder">Mittelfeldspieler</option>
+          <option value="Defender">Abwehrspieler</option>
+          <option value="Goalkeeper">Torhüter</option>
+        </select>
+      </div>
+
+      <div className="mt-4">
+        <button
+          className="btn w-full bg-blue-500 text-white hover:bg-blue-600 rounded-lg py-2"
+          onClick={handleSubmit}
+        >
+          Speichern
+        </button>
       </div>
     </div>
+  </fieldset>
+</div>
+
   )
 }
 

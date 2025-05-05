@@ -25,7 +25,7 @@ const UnionPage = () => {
           <div>
 
           </div>
-          <div style={{ justifySelf: "center", paddingTop: 5 }}>
+          <div style={{ justifySelf: "center", paddingTop: 5, alignContent: "center" }}>
             <Table data={players}/>
           </div>
           <div>
