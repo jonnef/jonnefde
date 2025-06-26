@@ -1,10 +1,12 @@
 import React from 'react'
 
-async function deletePlayer (id: Number) {
-  try{
-    console.log("Delete player...", id);
+async function deletePlayer (jerseyNumber: Number) {
+    const url = process.env.NEXT_PUBLIC_PLAYER_SERVICE_URL;
 
-    const response = await fetch((`https://player-management-service-production.up.railway.app/api/player/deletePlayer/${id}`),{method: 'DELETE',headers: {
+  try{
+    console.log("Delete player...", jerseyNumber);
+
+    const response = await fetch((`${url}/deletePlayer/${jerseyNumber}`),{method: 'DELETE',headers: {
       'Content-Type': 'application/json',
     },});
 

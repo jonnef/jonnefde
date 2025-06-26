@@ -1,12 +1,11 @@
 import React from 'react'
 
-const createNewPlayer = async (data: {firstName: string, lastName: string, position: string}) => {
-    //PROD: const url = 'https://player-management-service-production.up.railway.app/api/player/newPlayer';
-    const url = 'http://localhost:8080/api/player/newPlayer';
+const createNewPlayer = async (data: {name: string, jerseyNumber: number}) => {
+    const url = process.env.NEXT_PUBLIC_PLAYER_SERVICE_URL;
   try{
     console.log("Neuer spieler wird erstellt!");
     console.log(data);
-    const resp = await fetch(url, {
+    const resp = await fetch(`${url}/newPlayer`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
