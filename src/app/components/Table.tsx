@@ -1,20 +1,36 @@
 import React, { useEffect, useState } from 'react'
 import DeleteButton from './buttons/Delete';
+import translate from './services/translate';
 
 function TableComponent({data}:{data: any[]}) {
 
-  if(!data || data.length===0)return <p>Keine Daten verfügbar</p>;
+  const allowedColumns = ["firstName", "lastName", "balance", "nickName"]
+  const [translated, setTranslations] = useState([])
+  useEffect(() => {
+    async function fetchTranslations() {
+      // Hier wird die asynchrone translate-Funktion aufgerufen.
+      // Angenommen, translate ist eine Funktion, die ein Übersetzungsobjekt zurückgibt.
+      const translationsData = await(
+        headers.map(async (header) => {
+          // Beispiel: Wir nehmen an, dass translate(header) eine asynchrone Funktion ist
+          const translation = await translate(header)
+          return { header, translation }
+        })
+      );
+      setTranslations(translationsData)
+    }
+
+  if(!data || data.length===0)return <p>Keine Daten verfügbar</p>
 
     const headers = Object.keys(data[0]);
 
     const formatDate = (date: string) => {
-      const dateObj = new Date(date);
-      const day = String(dateObj.getDate()).padStart(2, '0');
-      const month = String(dateObj.getMonth() + 1).padStart(2, '0');
-      const year = dateObj.getFullYear();
+      const dateObj = new Date(date)
+      const day = String(dateObj.getDate()).padStart(2, '0')
+      const month = String(dateObj.getMonth() + 1).padStart(2, '0')
+      const year = dateObj.getFullYear()
       return `${day}.${month}.${year}`; // Format: DD.MM.YYYY
-    };
-    const allowedColumns = ["firstName", "lastName", "balance", "nickName"];
+    }
   return (
     <div>
       <div className="table zebra">
@@ -25,7 +41,7 @@ function TableComponent({data}:{data: any[]}) {
               .filter((header) => allowedColumns.includes(header))
               .map((header) => (
                 <th key={header}>
-                  {header.toUpperCase()}
+                  {translate(header)}
                 </th>
               ))}
             </tr>

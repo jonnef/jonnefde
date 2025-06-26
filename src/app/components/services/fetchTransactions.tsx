@@ -1,20 +1,20 @@
 import React from 'react'
 
-const fetchPlayers = async () => {
+const fetchTransactions = async () => {
   //const url = 'https://player-management-service-production.up.railway.app/api/player/newPlayer';
-    const url = 'http://localhost:8080/api/player';
+    const url = 'http://localhost:8080/api/transaction';
 
   try{
-    console.log("Fetching players...");
+    console.log("Fetching transactions...");
 
-    const response = await fetch(`${url}/allPlayers`,{
+    const response = await fetch(`${url}/all`,{
       method: 'GET',
     });
 
     console.log("Response status:", response.status);
     console.log(response.json);
     if(!response.ok){
-        throw new Error("Fehler beim Laden der Spieler!");
+        throw new Error("Fehler beim Laden der Transaktionen!");
     }
     return await response.json();
   }catch(error){
@@ -23,4 +23,4 @@ const fetchPlayers = async () => {
   }
 }
 
-export default fetchPlayers
+export default fetchTransactions
