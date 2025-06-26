@@ -30,6 +30,7 @@ export default function Home() {
     }
   ];
 
+  console.log('TEST:', process.env.NEXT_PUBLIC_PLAYER_SERVICE_URL);
   return (
     <>
       <Head>

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState, useMemo, useEffect } from "react";
-import fetchPlayers from "../components/services/fetchPlayers";
+import fetchPlayers from "../components/services/player/fetchPlayers";
 
 type Player = {
   name: string;

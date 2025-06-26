@@ -1,10 +1,11 @@
 import React from 'react'
 
 async function getPlayerById (id : number) {
+  const url = process.env.NEXT_PUBLIC_PLAYER_SERVICE_URL;
   try{
     console.log("Getting single Player...");
 
-    const response = await fetch((`https://player-management-service-production.up.railway.app/api/player/${id}`));
+    const response = await fetch((`${url}/${id}`));
 
     console.log("Response status:", response.status);
     if(!response.ok){

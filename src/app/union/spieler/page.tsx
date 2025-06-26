@@ -3,9 +3,9 @@
 import { useEffect, useState } from "react";
 import { Trash2 } from "lucide-react";
 import Link from "next/link";
-import fetchPlayers from "@/app/components/services/fetchPlayers";
-import createNewPlayer from "@/app/components/services/createNewPlayer";
-import deletePlayer from '@/app/components/services/deletePlayer';
+import fetchPlayers from "@/app/components/services/player/fetchPlayers";
+import createNewPlayer from "@/app/components/services/player/createNewPlayer";
+import deletePlayer from '@/app/components/services/player/deletePlayer';
 
 
 type Player = {

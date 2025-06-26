@@ -1,8 +1,7 @@
 import React from 'react'
 
 const fetchTransactions = async () => {
-  //const url = 'https://player-management-service-production.up.railway.app/api/player/newPlayer';
-    const url = 'http://localhost:8080/api/transaction';
+    const url = process.env.NEXT_PUBLIC_TRANSACTION_SERVICE_URL;
 
   try{
     console.log("Fetching transactions...");

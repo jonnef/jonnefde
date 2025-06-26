@@ -1,16 +1,20 @@
 import React from 'react'
 
 const fetchPlayers = async () => {
-  //const url = 'https://player-management-service-production.up.railway.app/api/player/newPlayer';
-    const url = 'http://localhost:8080/api/player';
+    const base_url = process.env.NEXT_PUBLIC_PLAYER_SERVICE_URL;
+   
+    const service_url = `${base_url}/allPlayers`;
 
   try{
     console.log("Fetching players...");
+    console.log("end",process.env);
+    console.log("envURL", process.env.NEXT_PUBLIC_PLAYER_SERVICE_URL);
 
-    const response = await fetch(`${url}/allPlayers`,{
+    const response = await fetch(service_url,{
       method: 'GET',
     });
 
+    console.log("URL:", service_url);
     console.log("Response status:", response.status);
     console.log(response.json);
     if(!response.ok){

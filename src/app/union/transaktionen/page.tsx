@@ -3,9 +3,9 @@
 import { useEffect, useMemo, useState } from "react";
 import { Trash2 } from "lucide-react";
 import Link from "next/link";
-import fetchTransactions from "@/app/components/services/fetchTransactions";
-import fetchPlayers from "@/app/components/services/fetchPlayers";
-import createNewTransaction from "@/app/components/services/createNewTransaction";
+import fetchTransactions from "@/app/components/services/transaction/fetchTransactions";
+import fetchPlayers from "@/app/components/services/player/fetchPlayers";
+import createNewTransaction from "@/app/components/services/transaction/createNewTransaction";
 
 type Spieler = {
   name: string;

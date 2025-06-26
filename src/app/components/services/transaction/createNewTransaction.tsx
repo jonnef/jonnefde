@@ -1,8 +1,7 @@
 import React from 'react'
 
 const createNewTransaction = async (data: {playerName: string, amount: number}) => {
-    const url = 'https://player-management-service-production.up.railway.app/api/player';
-    //const url = 'http://localhost:8080/api/transaction';
+    const url = process.env.NEXT_PUBLIC_TRANSACTION_SERVICE_URL;
   try{
     console.log("Neue Transaktion wird erstellt!");
     console.log(data);
