@@ -1,12 +1,12 @@
 import React from 'react'
 
-const createNewPlayer = async (data: {name: string, jerseyNumber: number}) => {
-    //const url = 'https://player-management-service-production.up.railway.app/api/player';
-    const url = 'http://localhost:8080/api/player';
+const createNewTransaction = async (data: {playerName: string, amount: number}) => {
+    const url = 'https://player-management-service-production.up.railway.app/api/player';
+    //const url = 'http://localhost:8080/api/transaction';
   try{
-    console.log("Neuer spieler wird erstellt!");
+    console.log("Neue Transaktion wird erstellt!");
     console.log(data);
-    const resp = await fetch(`${url}/newPlayer`, {
+    const resp = await fetch(`${url}/newTransaction`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -25,4 +25,4 @@ const createNewPlayer = async (data: {name: string, jerseyNumber: number}) => {
     }
 }
 
-export default createNewPlayer
+export default createNewTransaction
