@@ -1,4 +1,4 @@
-import MenuIcon from '@/app/icons/Menu'
+import MenuIcon from '@/app/components/icons/Menu'
 import Link from 'next/link'
 import React from 'react'
 

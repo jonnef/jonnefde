@@ -1,4 +1,4 @@
-import SunIcon from '@/app/icons/Sun'
+import SunIcon from '@/app/components/icons/Sun'
 import React from 'react'
 
 const ThemeSwapButton = () => {

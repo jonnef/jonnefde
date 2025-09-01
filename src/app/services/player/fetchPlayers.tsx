@@ -12,6 +12,10 @@ const fetchPlayers = async () => {
 
     const response = await fetch(service_url,{
       method: 'GET',
+      credentials: 'include',
+      headers:{
+        "Content-Type": "application/json",
+      }
     });
 
     console.log("URL:", service_url);

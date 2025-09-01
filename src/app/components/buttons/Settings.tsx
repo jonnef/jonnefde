@@ -1,4 +1,4 @@
-import SettingsIcon from '@/app/icons/Settings'
+import SettingsIcon from '@/app/components/icons/Settings'
 import React from 'react'
 
 const SettingsButton = () => {

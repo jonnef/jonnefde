@@ -1,14 +1,19 @@
 import React from 'react'
 
-const createNewPlayer = async (data: {name: string, jerseyNumber: number}) => {
-    const url = process.env.NEXT_PUBLIC_PLAYER_SERVICE_URL;
+const createNewTransaction = async (data: {playerName: string, amount: number},jwt?: string) => {
+    const url = process.env.NEXT_PUBLIC_TRANSACTION_SERVICE_URL;
+    const token =
+    jwt ??
+    (typeof window !== "undefined" ? localStorage.getItem("JWT") ?? undefined : undefined);
   try{
-    console.log("Neuer spieler wird erstellt!");
+    
+    console.log("Neue Transaktion wird erstellt!");
     console.log(data);
-    const resp = await fetch(`${url}/newPlayer`, {
+    const resp = await fetch(`${url}/newTransaction`, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
           },
         body: JSON.stringify(data)
     })
@@ -24,4 +29,4 @@ const createNewPlayer = async (data: {name: string, jerseyNumber: number}) => {
     }
 }
 
-export default createNewPlayer
+export default createNewTransaction

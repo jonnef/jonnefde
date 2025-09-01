@@ -55,6 +55,7 @@ export default function Mannschaftskasse() {
       <Head>
         <title>Mannschaftskasse</title>
       </Head>
+
       <main className="min-h-screen bg-gray-50 py-10 px-4">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-3xl font-bold mb-6">🏆 Mannschaftskasse</h1>

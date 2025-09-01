@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="J logo">
+  <style>
+    /* Default color is dark gray; can be overridden with CSS (currentColor) */
+    :root { --logo-color: #2b2b2b; }
+    text { fill: var(--logo-color); }
+    @media (prefers-color-scheme: dark) {
+      :root { --logo-color: #e6e6e6; } /* lighter in dark mode */
+    }
+  </style>
+  <!-- Use a font-independent vector outline for "J" -->
+  <path d="M168 40c6.627 0 12 5.373 12 12v112c0 38.66-31.34 70-70 70s-70-31.34-70-70h32c0 21.054 16.946 38 38 38s38-16.946 38-38V52c0-6.627 5.373-12 12-12z" fill="currentColor"/>
+  <!-- Allows overriding color from outside via currentColor -->
+</svg>

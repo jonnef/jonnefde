@@ -1,4 +1,4 @@
-import TrashCan from '@/app/icons/TrashCan';
+import TrashCan from '@/app/components/icons/TrashCan';
 import Link from 'next/link';
 import React from 'react'
 import deletePlayer from '../services/player/deletePlayer';

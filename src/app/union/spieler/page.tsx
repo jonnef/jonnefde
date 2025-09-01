@@ -3,9 +3,9 @@
 import { useEffect, useState } from "react";
 import { Trash2 } from "lucide-react";
 import Link from "next/link";
-import fetchPlayers from "@/app/components/services/player/fetchPlayers";
-import createNewPlayer from "@/app/components/services/player/createNewPlayer";
-import deletePlayer from '@/app/components/services/player/deletePlayer';
+import fetchPlayers from "@/app/services/player/fetchPlayers";
+import createNewPlayer from "@/app/services/player/createNewPlayer";
+import deletePlayer from '@/app/services/player/deletePlayer';
 
 
 type Player = {
@@ -17,8 +17,11 @@ export default function Spielerverwaltung() {
   const [player, setPlayer] = useState<Player[]>([]);
   const [newName, setNewName] = useState("");
   const [newNumber, setNewNumber] = useState("");
+  const [csrfToken, setCsrfToken] = useState<string | null>(null);
 
   useEffect(() => {
+    const token = localStorage.getItem("CSRF_TOKEN");
+    setCsrfToken(token);
     const loadPlayers = async () => {
       const data = await fetchPlayers();
       console.log(data);
@@ -28,6 +31,10 @@ export default function Spielerverwaltung() {
   }, []);
 
   const hinzufuegen = async () => {
+    if (!csrfToken) {
+      alert("Kein CSRF-Token gefunden!");
+      return;
+    }
     const name = newName.trim();
     const number = newNumber;
 
@@ -44,6 +51,7 @@ export default function Spielerverwaltung() {
     const payload = {
     name,
     jerseyNumber: Number(number),
+    csrfToken
     };
 
     const result = await createNewPlayer(payload);

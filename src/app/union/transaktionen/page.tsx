@@ -3,9 +3,10 @@
 import { useEffect, useMemo, useState } from "react";
 import { Trash2 } from "lucide-react";
 import Link from "next/link";
-import fetchTransactions from "@/app/components/services/transaction/fetchTransactions";
-import fetchPlayers from "@/app/components/services/player/fetchPlayers";
-import createNewTransaction from "@/app/components/services/transaction/createNewTransaction";
+import fetchTransactions from "@/app/services/transaction/fetchTransactions";
+import fetchPlayers from "@/app/services/player/fetchPlayers";
+import createNewTransaction from "@/app/services/transaction/createNewTransaction";
+import BackButton from "@/app/components/buttons/BackButon";
 
 type Spieler = {
   name: string;
@@ -112,7 +113,7 @@ export default function Transaktionsverwaltung() {
       <div className="max-w-4xl mx-auto">
         <h1 className="text-3xl font-bold mb-6 text-gray-900">💸 Transaktionsverwaltung</h1>
 
-        <div className="flex gap-4 mb-6">
+        <div className="flex gap-4 mb-6" style={{justifyContent:"center"}}>
           <select
             value={filterSpieler}
             onChange={(e) => setFilterSpieler(e.target.value)}
@@ -140,9 +141,9 @@ export default function Transaktionsverwaltung() {
           </select>
         </div>
 
-        <div className="mb-6 space-y-2">
+        <div className="mb-6 space-y-2" >
           <label className="block text-sm font-medium text-gray-700">Neue Transaktion</label>
-          <div className="flex gap-2 flex-wrap">
+          <div className="flex gap-2 flex-wrap" style={{justifyContent:"center"}}>
             {/* Nur Spieler auswählen */}
             <select
               value={neuerSpieler}
@@ -174,7 +175,9 @@ export default function Transaktionsverwaltung() {
           </div>
         </div>
 
-        <div className="bg-white rounded-xl shadow border border-gray-200">
+<BackButton/>
+
+        <div className="bg-white rounded-xl shadow border border-gray-200 px-4 py-4 mt-4">
           <h2 className="text-lg font-semibold p-4 border-b">Transaktionen</h2>
           <table className="min-w-full text-sm text-left text-gray-700">
             <thead className="bg-gray-100">
@@ -215,12 +218,6 @@ export default function Transaktionsverwaltung() {
               ))}
             </tbody>
           </table>
-        </div>
-
-        <div className="mt-8">
-          <Link href="/union" className="text-blue-600 text-sm hover:underline">
-            ← Zurück zur Übersicht
-          </Link>
         </div>
       </div>
     </main>
