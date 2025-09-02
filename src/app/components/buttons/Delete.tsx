@@ -1,7 +1,7 @@
 import TrashCan from '@/app/components/icons/TrashCan';
 import Link from 'next/link';
 import React from 'react'
-import deletePlayer from '../services/player/deletePlayer';
+import deletePlayer from '@/app/services/player/deletePlayer';
 
 const DeleteButton = (data: {id: Number}) => {
     const delPlayer = (id: Number) => {
