@@ -5,7 +5,7 @@ export default function ToolGrid({ tools }: { tools: any[] }) {
     <div
       className="
         grid gap-6 justify-center
-        sm:grid-cols-2 lg:grid-cols-2
+        sm:grid-cols-3 lg:grid-cols-3
         max-w-5xl mx-auto
       "
     >

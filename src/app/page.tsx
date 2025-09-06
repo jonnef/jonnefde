@@ -3,7 +3,9 @@ import ToolGrid from "./components/ToolGrid";
 
 export default function HomePage() {
   const tools = [
-    { title: "Mannschaftskasse", description: "Beiträge und Ausgaben im Fußballteam verwalten", icon: "🏆", link: "/union", roles: ["USER","ADMIN"] },
+    { title: "Placeholder", description: "Placeholder", icon: "🏆", link: "/", roles: ["USER","ADMIN"] },
+    { title: "Getränkekasse", description: "Getränkekassen übersicht und Verwaltung", icon: "🏆", link: "/union", roles: ["USER","ADMIN"] },
+    { title: "Placeholder", description: "Placeholder", icon: "🏆", link: "/", roles: ["USER","ADMIN"] },
   ];
 
   return (
