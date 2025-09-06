@@ -13,6 +13,7 @@ export function useAuth() {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [isRegister, setIsRegister] = useState(false);
+  const baseUrl = process.env.NEXT_PUBLIC_USER_SERVICE_URL;
 
   useEffect(() => {
     const t = loadToken();
@@ -27,7 +28,7 @@ export function useAuth() {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch("http://localhost:8080/auth/login", {
+      const res = await fetch(`${baseUrl}/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
@@ -57,7 +58,7 @@ export function useAuth() {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch("http://localhost:8080/auth/register", {
+      const res = await fetch(`${baseUrl}/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
@@ -81,7 +82,7 @@ export function useAuth() {
 
   // Beispiel: Protected Call (setzt automatisch Bearer)
   const loadPlayers = async () => {
-    const res = await apiFetch("http://localhost:8080/api/player/allPlayers");
+    const res = await apiFetch(`${process.env.NEXT_PUBLIC_PLAYER_SERVICE_URL}/allPlayers`);
     if (!res.ok) throw new Error(`players: ${res.status}`);
     return res.json();
   };

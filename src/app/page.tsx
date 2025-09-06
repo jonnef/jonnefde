@@ -3,10 +3,9 @@ import ToolGrid from "./components/ToolGrid";
 
 export default function HomePage() {
   const tools = [
-    { title: "Mannschaftskasse", description: "Beiträge und Ausgaben im Fußballteam verwalten", icon: "🏆", link: "/union", roles: ["USER","ADMIN"] },
-    { title: "Zeiterfassung", description: "Einfache App zum Tracken von Aufgaben & Zeit", icon: "🕑", link: "/tools/zeiterfassung", roles: ["USER","ADMIN"] },
-    { title: "Haushaltsrechner", description: "Übersicht über monatliche Einnahmen & Ausgaben", icon: "📊", link: "/tools/haushaltsrechner", roles: ["ADMIN"] },
-    { title: "Link-Sammlung", description: "Eigene Links / Lesezeichen organisiert speichern", icon: "📎", link: "/tools/link-sammlung", roles: ["USER","ADMIN"] },
+    { title: "Placeholder", description: "Placeholder", icon: "🏆", link: "/", roles: ["USER","ADMIN"] },
+    { title: "Getränkekasse", description: "Getränkekassen übersicht und Verwaltung", icon: "🏆", link: "/union", roles: ["USER","ADMIN"] },
+    { title: "Placeholder", description: "Placeholder", icon: "🏆", link: "/", roles: ["USER","ADMIN"] },
   ];
 
   return (
