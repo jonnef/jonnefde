@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState, useMemo, useEffect } from "react";
-import fetchPlayers from "../components/services/player/fetchPlayers";
+import fetchPlayers from "../services/player/fetchPlayers";
 
 type Player = {
   name: string;
@@ -27,14 +27,12 @@ export default function MannschaftskasseOverview() {
 }, [playerList]);
 
   function formatMonat(monat: string) {
-  // Erwarte Monat in "YYYY-MM"
+
   const [jahr, monatNummer] = monat.split("-");
   if (!jahr || !monatNummer) return monat;
 
-  // Date-Objekt auf den ersten Tag im Monat
   const datum = new Date(parseInt(jahr), parseInt(monatNummer) - 1);
 
-  // Lokale Darstellung, nur Monat + Jahr, deutsch
   return datum.toLocaleDateString("de-DE", { year: "numeric", month: "long" });
 }
 

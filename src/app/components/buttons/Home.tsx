@@ -1,4 +1,4 @@
-import HomeIcon from '@/app/icons/Home';
+import HomeIcon from '@/app/components/icons/Home';
 import Link from 'next/link';
 import React from 'react'
 

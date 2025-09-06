@@ -5,7 +5,7 @@ async function login (username: string, password: string) {
   try{
     console.log("User logging in...");
 
-    const response = await fetch((`localhost:8080/api/login`),{
+    const response = await fetch((`localhost:8080/auth/login`),{
         method: 'POST',
         headers: {'Content-Type': 'application/json',},
         body: JSON.stringify({

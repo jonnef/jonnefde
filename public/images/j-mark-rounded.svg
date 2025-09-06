@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="J logo in rounded container">
+  <style>
+    :root {
+      --logo-color: #2b2b2b;      /* J fill */
+      --ring-color: #11182733;    /* subtle ring for light mode */
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --logo-color: #e6e6e6;    /* J becomes light in dark mode */
+        --ring-color: #ffffff22;  /* faint ring for dark backgrounds */
+      }
+    }
+  </style>
+  <g>
+    <!-- soft outer ring (looks modern, helps contrast on busy BGs) -->
+    <circle cx="128" cy="128" r="120" fill="none" stroke="var(--ring-color)" stroke-width="12"/>
+    <!-- J mark -->
+    <path d="M168 40c6.627 0 12 5.373 12 12v112c0 38.66-31.34 70-70 70s-70-31.34-70-70h32c0 21.054 16.946 38 38 38s38-16.946 38-38V52c0-6.627 5.373-12 12-12z" fill="var(--logo-color)"/>
+  </g>
+</svg>
