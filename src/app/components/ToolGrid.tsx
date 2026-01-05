@@ -9,9 +9,9 @@ export default function ToolGrid({ tools }: { tools: any[] }) {
         max-w-5xl mx-auto
       "
     >
-      {tools.map((t) => (
-        <ToolCard key={t.link} {...t} />
-      ))}
+      {tools.map((t, i) => (
+  <ToolCard key={`${t.link}-${i}`} {...t} />
+))}
     </div>
   );
 }
